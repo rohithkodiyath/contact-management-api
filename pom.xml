@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>edu.concordia</groupId>
+    <artifactId>contact-management</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>contact-management</name>
+    <description>contact-management</description>
+    <modules>
+        <module>shared</module>
+        <module>authentication</module>
+        <module>contact</module>
+        <module>application</module>
+    </modules>
+    <properties>
+        <java.version>21</java.version>
+        <swagger.version>2.2.0</swagger.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <log4j-version>2.23.1</log4j-version>
+    </properties>
+
+    <dependencyManagement>
+       <dependencies>
+           <dependency>
+               <groupId>org.springdoc</groupId>
+               <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+               <version>${swagger.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>io.jsonwebtoken</groupId>
+               <artifactId>jjwt</artifactId>
+               <version>${jjwt.version}</version>
+           </dependency>
+
+<!--           <dependency>-->
+<!--               <groupId>org.springframework.boot</groupId>-->
+<!--               <artifactId>spring-boot-starter</artifactId>-->
+<!--               -->
+<!--           </dependency>-->
+<!--           <dependency>-->
+<!--               <groupId>org.springframework.boot</groupId>-->
+<!--               <artifactId>spring-boot-starter-web</artifactId>-->
+<!--           </dependency>-->
+<!--           <dependency>-->
+<!--               <groupId>org.springframework.boot</groupId>-->
+<!--               <artifactId>spring-boot-starter-test</artifactId>-->
+<!--               <scope>test</scope>-->
+<!--           </dependency>-->
+       </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j-version}</version>
+        </dependency>
+
+        <!--       swagger dependency -->
+<!--   swagger     -->
+    </dependencies>
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <mainClass>edu.concordia.ContactManagementApplication</mainClass>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+
+</project>

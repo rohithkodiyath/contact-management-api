@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  contact-management-db:
+    image: mongo:4.0.4
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - contact-management-db-vol:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: contact-management
+  contact-mongo-express:
+    image: mongo-express
+    restart: always
+    depends_on:
+      - contact-management-db
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=contact-management-db
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_AUTH_USERNAME=root
+      - ME_CONFIG_MONGODB_AUTH_PASSWORD=password
+volumes:
+    contact-management-db-vol:
